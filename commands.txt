@@ -1,0 +1,67 @@
+sql commands
+
+1. DATABASE
+ - CREATE DATABASE users;
+
+2. TABLES
+ - SHOW TABLES;
+ - SELECT * FROM users;
+ - CREATE TABLE users (id INTEGER, name TEXT, age INTEGER, is_admin BOOLEAN);
+ - SELECT id,name, is_admin FROM users;
+
+ 3. ALTER TABLES
+    - ALTER TABLE people
+    RENAME TO users;
+
+    ALTER TABLE users
+    RENAME COLUMN tag TO username;
+
+    ALTER TABLE users
+    ADD COLUMN password TEXT;
+
+    -- TEST SUITE, DON'T TOUCH BELOW THIS LINE --
+
+    PRAGMA TABLE_INFO('users');
+
+4. COLUMN
+ - SHOW COLUMN FROM (table_name);
+ - ADD COLUMN (transaction_type) TEXT;
+
+ 5. CONSTRAINT
+ - CREATE TABLE employees (
+    id INTEGER PRIMARY KEY,
+    name TEXT UNIQUE,
+    title TEXT NOT NULL
+ );
+
+- CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    age INTEGER NOT NULL,
+    country_code TEXT NOT NULL,
+    username TEXT UNIQUE,
+    password TEXT NOT NULL,
+    is_admin BOOLEAN
+    );
+
+ 6. INSERT
+- INSERT into users (
+    id,
+    name,
+    age,
+    country_code,
+    is_admin
+) values (
+    0,
+    "Ayobami",
+    28,
+    "US",
+    false
+)
+
+7. MIGRATION
+ALTER TABLE transactions
+ADD COLUMN was_successful BOOLEAN;
+
+ALTER TABLE transactions
+ADD COLUMN transaction_type TEXT;

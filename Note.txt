@@ -1,0 +1,32 @@
+1. SQLite is great for embedded projects, web browsers, and toy projects. It’s lightweight, but has limited functionality compared to the likes of PostgreSQL or MySQL - two of the more common production SQL technologies.
+
+2. PostgreSQL is more of a monolith, it acts as a server itself. It is a better option when you are storing a massive amount of data in your db. It also has an exhaustive type checking whereas sqlite is loosely typed.
+
+3. What we refer to as a field is a column in sql
+
+4. The act of adding a new field to a db is called a DATABASE MIGRATION
+
+5. Rule of Thumb for Database MIGRATION
+-- ADDING A COLUMN OR TABLE --
+ a. Update the db(adding new stuff)
+ b. Update your code
+
+-- DELETING A COLUNM OR TABLE --
+ a. Update the code
+ b. Update the db
+
+-- UPDATING A COLUMN OR TABLE --
+ a. It is generally a bad idea updating a table/column of a db in production
+ b. Get a downtime
+ c. Same time deploy(updating the db and code at the same time)
+ d. Aliasing(it is the best but it depends on the db)
+
+6. Up migration involves running of the code in order to arrive at the final state while DOWN migration is used to roll back changes in case something goes wrong.
+
+7. SQLITE datatypes -> NULL, INTEGER, REAL, TEXT, BLOB, BOOLEAN
+
+* The (VARCHAR) is similar to the TEXT, u have to know how long your text field is. It is used in emails, password, hashes
+
+8. Foreign keys are what makes databases relational. It helps relate one data in one table to a data in another table. A way to ensure relationship exist in a db.
+
+9. 
